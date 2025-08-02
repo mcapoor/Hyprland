@@ -2,7 +2,6 @@
 # Downgrade broken packages 
 
 old_packages=(
-  'code-1.101.1-2-x86_64.pkg.tar.zst' \
   'wofi-1.4.1-1-x86_64.pkg.tar.zst' \
 )
 
