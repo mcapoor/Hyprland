@@ -1,0 +1,12 @@
+[monitor 0;workspace 3 silent;move 4,46;size 2040,1230;;;;] okular
+[monitor 0;workspace 2 silent;move 1028,89;size 1016,1187;;;;] /opt/visual-studio-code/code
+[monitor 0;workspace 2 silent;move 1028,89;size 1016,568;;;;] /opt/visual-studio-code/code
+[monitor 0;workspace -98 silent;move 4,89;size 2040,1187;;;;] slack
+[monitor 0;workspace -98 silent;move 4,89;size 2040,1187;;;;] /usr/lib/thunderbird/thunderbird
+[monitor 0;workspace -98 silent;move 4,89;size 2040,1187;;;;] discord
+[monitor 0;workspace 2 silent;move 4,46;size 1016,1230;;;;] /usr/lib/firefox/firefox -p Work --class Navigator --no-remote
+[monitor 0;workspace 4 silent;move 4,46;size 2040,1230;;;;] /usr/lib/firefox/firefox -p Work --class Navigator --no-remote
+[monitor 0;workspace -97 silent;move 4,46;size 2040,1230;;;;] /opt/spotify/spotify
+[monitor 0;workspace 1 silent;move 1028,46;size 1016,1230;;;;] /usr/lib/firefox/firefox -p Work --class Navigator --no-remote
+[monitor 0;workspace 1 silent;move 4,46;size 1016,611;;;;] /opt/visual-studio-code/code
+[monitor 0;workspace 1 silent;move 4,665;size 1016,611;;;;] kitty
