@@ -35,6 +35,14 @@ window_quarter() {
     echo "$horizontal $vertical"    
 }
 
+active_ws() {
+    if [[ $(hyprctl monitors -j | jq -r '.[] | .specialWorkspace.name') == '' ]]; then 
+        echo $(hyprctl monitors -j | jq -r '.[] | .activeWorkspace.id')
+    else 
+        echo $(hyprctl monitors -j | jq -r '.[] | .specialWorkspace.id')
+    fi
+}
+
 move() {
     local direction=$1
     local abbrev="${direction:0:1}"
@@ -62,7 +70,7 @@ add_to_group() {
 
     same_column=$([ "$(echo $active_quarter | awk '{print $1}')" = "$(echo $window_quarter | awk '{print $1}')" ] && echo true || echo false)
     same_row=$([ "$(echo $active_quarter | awk '{print $2}')" = "$(echo $window_quarter | awk '{print $2}')" ] && echo true || echo false)
-s
+
     # Move other windows in the same column
     if [[ $group_direction = 'up' || $group_direction = 'down' ]]; then
         if [[ $loc_y -lt $active_y && $same_column = true ]]; then
@@ -102,7 +110,9 @@ monitor_width=$(hyprctl monitors -j | jq -r '
                 | select(.focused)
                 | .width') 
 
-focused_ws=$(hyprctl activeworkspace -j | jq '.id')
+focused_ws=$(active_ws)
+
+echo "Focused workspace ID: $focused_ws"
 
 active_addr=$(hyprctl activewindow -j | jq -r '.address')
 active_loc=$(hyprctl activewindow -j | jq -r '.at' | tr -d ',')
@@ -133,6 +143,7 @@ windows=$(hyprctl clients -j \
         | select(.pinned == false)
         | "\(.address) \(.at) \(.class) \(.size)"')
     
+echo "Found $(wc -l <<< "$windows") windows to consider for grouping:\n$windows\n" 
     
 while IFS= read -r window; do
     add_to_group "$window" "$group_direction"
