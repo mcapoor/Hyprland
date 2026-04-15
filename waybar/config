@@ -14,15 +14,13 @@
     "custom/applauncher"
   ],
   "modules-right": [
-    "network",
     "memory",
     "cpu",
-    "battery",
     "pulseaudio",
     "backlight",
     "tray",
-    "bluetooth",
     "clock",
+    "battery",
     "custom/notification"
   ],
   "hyprland/workspaces": {
@@ -32,9 +30,9 @@
     "show-special": true,
     "tooltip-format": "{windows}",
     "format-icons": {
-      "messages": " ",
-      "music": " ",
-      "calendar": " "
+      "messages": "✉",
+      "calendar": "",
+      "music": ""
     }
   },
   "custom/applauncher": {
@@ -68,19 +66,19 @@
   },
   "cpu": {
     "interval": 10,
-    "format": "  {}%",
+    "format": "    {}%",
     "max-length": 10
   },
   "memory": {
     "interval": 30,
-    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "format": "    {used:0.1f}G/{total:0.1f}G",
     "on-click": "kitty -e btop"
   },
   "network": {
-    "format-wifi": "   {bandwidthDownBits}",
-    "format-ethernet": "   {bandwidthDownBits}",
-    "format-disconnected": "  No Network",
-    "format-disabled": "  Disabled",
+    "format-wifi": "     {bandwidthDownBits}",
+    "format-ethernet": "     {bandwidthDownBits}",
+    "format-disconnected": "     No Network",
+    "format-disabled": "     Disabled",
     "interval": 5,
     "tooltip": true,
     "tooltip-format": "{essid} ({signalStrength}%) "
@@ -89,12 +87,12 @@
     "scroll-step": 5,
     "max-volume": 150,
     "format": "{icon} {volume}%",
-    "format-bluetooth": " {volume}%",
+    "format-bluetooth": "   {volume}%",
     "format-muted": "",
     "format-icons": [
-      " ",
-      " ",
-      " "
+      "   ",
+      "   ",
+      "   "
     ],
     "nospacing": 1,
     "on-click": "pavucontrol",
@@ -108,12 +106,12 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-critical": "  {capacity}%",
+    "format-charging": "   {capacity}%",
+    "format-critical": "    {capacity}%",
     "format-icons": [
-      "  ",
-      "  ",
-      "  "
+      "    ",
+      "    ",
+      "    "
     ],
     "on-click": "kitty -e sudo powertop"
   },

@@ -22,4 +22,4 @@ elif [[ "$1" == "lower" ]]; then
 fi
 
 # Send notification of volume change
-hyprctl dismissnotify && hyprctl notify -1 1500 0 "fontsize:16 $ICON   $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | sed 's/%//')%"
+hyprctl dismissnotify && hyprctl notify -1 1500 0 "fontsize:16 $ICON     $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | sed 's/%//')%"
