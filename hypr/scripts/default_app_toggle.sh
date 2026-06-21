@@ -25,8 +25,8 @@ elif [[ $application == 'code' ]]; then
 elif [[ $application == 'kitty' ]]; then
     class='kitty'
 else
-    echo "Application not recognized."
-    exit 1
+    echo "Application not recognized. Trying to launch it directly."
+    $application &
 fi
  
 if echo "$windows_on_ws" | grep -q "$class"; then

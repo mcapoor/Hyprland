@@ -67,7 +67,8 @@
   "cpu": {
     "interval": 10,
     "format": "    {}%",
-    "max-length": 10
+    "max-length": 10,
+    "on-click": "kitty -e btop"
   },
   "memory": {
     "interval": 30,
